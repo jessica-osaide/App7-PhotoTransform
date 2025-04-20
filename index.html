@@ -150,8 +150,7 @@
       <div id="messageDisplayArea"></div>
       
       <canvas id="myCanvas" width=600 height=500 style="border:1px solid #d3d3d3;"></canvas>
-      <canvas id="mySecondCanvas" width="600" height="500" style="border:1px solid #0000FF;"></canvas>
-      <script> /* This script initiates the cavas and puts the text on the canvas "myCanvas" */
+      <script> /* This script initiates the canvas and puts the text on the canvas "myCanvas" */
         var canvas = document.getElementById('myCanvas');
         var context = canvas.getContext("2d");
         context.font = '20pt Calibri';
@@ -159,6 +158,15 @@
         context.fillText("Original image will go here", 10, 20);
       </script>
 
+     <canvas id="mySecondCanvas" width="600" height="500" style="border:1px solid #0000FF;"></canvas> <!-- start of the second canvas -->
+     <script> // initiates the second canvas and puts the text "mySecondCanvas"
+       var canvas2 = document.getElementById('dataCanvas');
+       var context2 = canvas2.getContext("2d");
+       context2.font = '20pt Calibri';
+       context2.fillStyle = "blue";
+       context2.fillText("Blue image will go here", 10, 20);
+     </script>
+     
     </div><!-- /content -->
     <div data-role="footer" data-position="fixed">
       <p>DIY Diagnostics</p>
