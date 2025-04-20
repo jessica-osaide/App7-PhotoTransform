@@ -14,7 +14,7 @@
  
   Authors in chronological order of contribution:
   Author 1: Timothy E. Riedel
-  Author 2: ?????????
+  Author 2: Jessica Osaide
   
   References:
   http://docs.webplatform.org/wiki/concepts/programming/drawing_images_onto_canvas#Loading_the_image_programmatically
@@ -24,10 +24,10 @@
   http://stackoverflow.com/questions/11929099/html5-canvas-drawimage-ratio-bug-ios
   
   Brief Description of Goal of Code:
-  blah, blah, blah,
+  Uploading images until they are blue
  
   Known Issues:
-  blah, blah, blah, blah
+  None
 -->
 
  <head>
@@ -99,11 +99,21 @@
 
           /*  +++++++++++++++ BEGIN IMAGE PROCESSING +++++++++++++++ */
           /*  ++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
+          
+           var imageData = context.getImageData(0, 0, 600, 500); // retrieves data from about the image
+           var data = imageData.data;
 
-          /* PUT ANY CHANGES TO THE JAVASCRIPT HERE  */
-          
-          
-          
+           for (var i = 0; i < data.length; i += 4) { // checks pixels, [i] is red, [i + 1] is green, and [i + 2 is blue]
+           data[i] = 0; // prompts code to remove all red pixels
+           data[i + 1] = 0; // prompts code to remove all green pixels
+         
+         }
+            
+           /* PUT ANY CHANGES TO THE JAVASCRIPT HERE  */
+           
+           bluecontext.putImageData(imageData, 0, 0);
+         
+          }
           
         } // end of img.onload
         
